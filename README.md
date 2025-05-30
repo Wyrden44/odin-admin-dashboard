@@ -13,6 +13,10 @@ Date: 30.05.2025
 
 Hours working per day: 4
 
+Finish: 30.05.2025
+
+Time taken: 5h
+
 ### Progress on Foundations Course:
 :white_check_mark: Complete
 
