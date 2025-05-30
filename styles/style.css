@@ -15,7 +15,7 @@
 @property --contrast {
     syntax: "<color>";
     inherits: false;
-    initial-value: #124e66;
+    initial-value: #138ab9;
 }
 
 @property --grey {
@@ -105,6 +105,11 @@ body {
     gap: 25px;
 
     flex: 1;
+}
+
+.header .profile p {
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .greeting {
@@ -410,4 +415,24 @@ body {
 .progress > .progress-section:not(:last-child) {
     border-bottom: 1px solid var(--grey);
     padding-bottom: 20px;
+}
+
+/* Animations */
+.sidebar li:hover {
+    background-color: var(--contrast);
+}
+
+.info-section:hover {
+    border: 2px solid var(--contrast);
+    box-shadow: var(--grey) 5px 5px 5px -5px;
+}
+
+.statistics:hover, .progress:hover, .project:hover {
+    box-shadow: var(--grey) 5px 5px 10px -3px;
+}
+
+.project button:hover, .action button:hover {
+    cursor: pointer;
+    background-color: var(--contrast);
+    box-shadow: var(--grey) 5px 5px 5px -5px;
 }
