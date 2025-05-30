@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/reset-styles.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -13,33 +13,151 @@
 <body>
     <div class="container">
         <div class="header">
+            <div class="search">
+                <img src="./assets/logos/magnify.svg" alt="Magnify" width="30" height="30">
+                <input type="search" name="search" id="search">
+            </div>
+            <div class="profile">
+                <img src="./assets/logos/bell-badge-outline.svg" alt="notifications" width="30" height="30">
+                <img id="profile-picture" src="" alt="Profile Picture" width="50" height="50">
+                <p class="profile-name">Pawel Gurlo</p>
+            </div>
+        </div>
 
+        <div class="greeting">
+            <img id="profile-picture" src="" alt="Profile Picture" width="50" height="50">
+            <p>Hi there,</p>
+            <h1>Pawel Gurlo (@Wyrden44)</h1>
         </div>
         
         <div class="overview">
-
+            <h1>Overview</h1>
+            <div class="info-section">
+                <p>Projects</p>
+                <p>6</p>
+            </div>
+            <div class="info-section">
+                <p>Open</p>
+                <p>1</p>
+            </div>
+            <div class="info-section">
+                <p>Closed</p>
+                <p>5</p>
+            </div>
+            <div class="info-section">
+                <p>Completion Rate</p>
+                <p>100%</p>
+            </div>
         </div>
 
         <div class="sidebar">
-
+            <div class="heading">
+                <img src="./assets/logos/anchor.svg" alt="Anchor" width="50" height="50">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <img src="./assets/logos/home-outline.svg" alt="Home" width="30" height="30">
+                        <p>Home</p>
+                    </li>
+                    <li>
+                        <img src="./assets/logos/card-account-details-outline.svg" alt="Card" width="30" height="30">
+                        <p>Profile</p>
+                    </li>
+                    <li>
+                        <img src="./assets/logos/message-outline.svg" alt="Message" width="30" height="30">
+                        <p>Messages</p>
+                    </li>
+                    <li>
+                        <img src="./assets/logos/history.svg" alt="CLock" width="30" height="30">
+                        <p>history</p>
+                    </li>
+                    <li>
+                        <img src="./assets/logos/calendar-check.svg" alt="Paper" width="30" height="30">
+                        <p>Tasks</p>
+                    </li>
+                    <li>
+                        <img src="./assets/logos/account-group-outline.svg" alt="People" width="30" height="30">
+                        <p>Communities</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="actions">
+                <ul>
+                    <li>
+                        <img src="./assets/logos/cog-outline.svg" alt="Cog" width="30" height="30">
+                        <p>Settings</p>
+                    </li>
+                    <li>
+                        <img src="./assets/logos/help.svg" alt="help" width="30" height="30">
+                        <p>Support</p>
+                    </li>
+                    <li>
+                        <img src="./assets/logos/shield-check-outline.svg" alt="shield-check-outline" width="30" height="30">
+                        <p>Privacy</p>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="project-section">
             <div class="projects">
-
+                <h1>My Projects</h1>
+                <div class="project">
+                    <h2>Admin Dashboard</h2>
+                    <p>This is the page you are on. Most suffisticated project yet.</p>
+                    <button>View</button>
+                    <img src="./assets/logos/star-plus-outline.svg" alt="Star" width="30" height="30"></div>
+                <div class="project">
+                    <h2>Landing Page</h2>
+                    <p>Last Project on Foundations course.</p>
+                    <button>View</button>
+                    <img src="./assets/logos/star-plus-outline.svg" alt="Star" width="30" height="30"></div>
+                <div class="project">
+                    <h2>Sign-up Form</h2>
+                    <p>This project was for practicing creating forms in HTML and CSS. In this project I was keen on adding a sleak design</p>
+                    <button>View</button>
+                    <img src="./assets/logos/star-plus-outline.svg" alt="Star" width="30" height="30"></div>
+                <div class="project">
+                    <h2>Rock Paper Scissors</h2>
+                    <p>A very basic Rock Paper Scissors game made with Javascript.</p>
+                    <button>View</button>
+                    <img src="./assets/logos/star-plus-outline.svg" alt="Star" width="30" height="30"></div>
+                <div class="project">
+                    <h2>Etch A Sketch</h2>
+                    <p>Very basic Etch A Sketch made with Javascript.</p>
+                    <button>View</button>
+                    <img src="./assets/logos/star-plus-outline.svg" alt="Star" width="30" height="30"></div>
+                <div class="project">
+                    <h2>Recipes</h2>
+                    <p>My first TOP-Website!</p>
+                    <button>View</button>
+                    <img src="./assets/logos/star-plus-outline.svg" alt="Star" width="30" height="30"></div>
             </div>
 
             <div class="statistics">
-
+                <h1>Statistics</h1>
+                <div class="statistics-section">
+                    <p>Work time per day:</p>
+                    <p>5h</p>
+                </div>
+                <div class="statistics-section">
+                    <p>Average work time per project</p>
+                    <p>2h</p>
+                </div>
+                <div class="statistics-section">
+                    <p>Work on this project</p>
+                    <p>5h</p>
+                </div>
             </div>
 
-            <div class="trending">
-
+            <div class="progress">
+                <h1>Progression towards my main goal</h1>
+                <h2>Phase: Skill-building</h2>
+                <label for="progress-bar">Progress:</label>
+                <progress id="progress-bar" value="5" max="100">5%</progress>
             </div>
-        </div>
-
-        <div class="footer">
-
         </div>
     </div>
 </body>
