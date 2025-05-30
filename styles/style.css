@@ -1,0 +1,32 @@
+/* Color Palette */
+
+@property --main-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #212A31;
+}
+
+@property --lighter-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #2E3944;
+}
+
+@property --contrast {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #124e66;
+}
+
+@property --grey {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #748d92;
+}
+
+@property --light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #d3d9d4;
+}
+
