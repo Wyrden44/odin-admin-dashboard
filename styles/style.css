@@ -43,10 +43,15 @@ ul {
     list-style: none;
 }
 
+img {
+    width: 25px;
+    height: 25px;
+}
+
 .container {
     display: grid;
     grid-template-columns: clamp(200px, 20%, 300px) 4fr;
-    grid-template-rows: 80px 1fr 1fr 4fr;
+    grid-template-rows: 80px 100px 175px 4fr;
     grid-template-areas:
         "sidebar header"
         "sidebar greeting"
@@ -58,19 +63,137 @@ ul {
 .header {
     grid-area: header;
     
-    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .search{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    margin-left: clamp(10px, 5%, 200px);
+    
+    flex: 3;
+}
+
+.header .search input{
+    border: none;
+    border-radius: 20px;
+    background-color: var(--light);
+    padding: 5px 10px;
+    flex: 1;
+    max-width: min(80%, 800px);
+}
+
+.header .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 25px;
+
+    flex: 1;
 }
 
 .greeting {
     grid-area: greeting;
-    
-    border: 2px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.greeting .profile {
+    margin-left: clamp(10px, 5%, 200px);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "profile p"
+        "profile name"
+    ;
+    row-gap: 5px;
+    column-gap: 10px;
+}
+
+.greeting .profile p {
+    grid-area: p;
+    font-size: 0.9rem;
+    align-self: end;
+}
+
+.greeting .profile h1 {
+    grid-area: name;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.greeting .action {
+    flex: 1;
+
+    display: flex;
+    justify-content: end;
+    margin-right: max(10px, 3%);
+    gap: 40px;
+}
+
+.greeting .action button {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    color: white;
+    font-weight: bold;
+    background-color: var(--main-dark);
 }
 
 .overview {
+    --heading-size: 1.5rem;
+
     grid-area: overview;
-    
-    border: 2px solid black;
+    display: grid;
+    grid-template-rows: calc(var(--heading-size)*2.25) 1fr;
+    background-color: var(--light);
+    padding: 0 clamp(10px, 5%, 200px) 20px;
+}
+
+.overview h1 {
+    font-size: var(--heading-size);
+    font-weight: bold;
+    align-self: center;
+}
+
+.overview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: stretch;
+    gap: max(5%, 20px);
+}
+
+.overview-container > div {
+    --item-heading-size: 0.9rem;
+
+    display: grid;
+    grid-template-rows: calc(var(--item-heading-size) + 10px) 1fr;
+    text-align: center;
+
+    background-color: white;
+
+    border: 2px solid var(--grey);
+    border-radius: 10px;
+}
+
+.overview-container > div > p:first-child {
+    margin-top: 10px;
+    font-size: var(--item-heading-size);
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+    color: var(--grey)
+}
+
+.overview-container > div > p:last-child {
+    align-self: center;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 .sidebar {
@@ -79,7 +202,7 @@ ul {
     flex-direction: column;
     gap: 40px;
     
-    background-color: var(--contrast);
+    background-color: var(--main-dark);
     color: white;
 }
 
@@ -89,7 +212,11 @@ ul {
     gap: 10px;
     padding: 10px;
     margin-top: 10px;
-    border: 2px solid;
+}
+
+.sidebar .heading img {
+    width: 50px;
+    height: 50px;
 }
 
 .sidebar .heading h1 {
@@ -108,10 +235,6 @@ ul {
     align-items: center;
     gap: 10px;
     padding: 5px 20px;
-}
-
-.sidebar .actions {
-
 }
 
 .project-section {
