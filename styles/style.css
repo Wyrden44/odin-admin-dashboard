@@ -54,6 +54,11 @@ img {
     border-radius: 50%;;
 }
 
+body {
+    height: 100vh;
+    --heading-size: 1.5rem;
+}
+
 .container {
     display: grid;
     grid-template-columns: clamp(200px, 20%, 300px) 4fr;
@@ -64,6 +69,7 @@ img {
         "sidebar overview"
         "sidebar projects"
     ;
+    height: 100%;
 }
 
 .header {
@@ -107,6 +113,10 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding-bottom: 20px;
+    box-shadow: var(--main-dark) 5px 10px 10px -11px;
+    z-index: 2;
 }
 
 .greeting .profile {
@@ -159,13 +169,11 @@ img {
 }
 
 .overview {
-    --heading-size: 1.5rem;
-
     grid-area: overview;
     display: grid;
     grid-template-rows: calc(var(--heading-size)*2.25) 1fr;
     background-color: var(--light);
-    padding: 0 clamp(10px, 5%, 200px) 20px;
+    padding: 10px clamp(10px, 5%, 200px) 20px;
 }
 
 .overview h1 {
@@ -181,7 +189,7 @@ img {
     gap: max(5%, 20px);
 }
 
-.overview-container > div {
+.info-section {
     --item-heading-size: 0.9rem;
 
     display: grid;
@@ -194,7 +202,7 @@ img {
     border-radius: 10px;
 }
 
-.overview-container > div > p:first-child {
+.info-section > p:first-child {
     margin-top: 10px;
     font-size: var(--item-heading-size);
     letter-spacing: 0.05rem;
@@ -202,7 +210,7 @@ img {
     color: var(--grey)
 }
 
-.overview-container > div > p:last-child {
+.info-section > p:last-child {
     align-self: center;
     font-size: 1.7rem;
     font-weight: bold;
@@ -251,7 +259,155 @@ img {
 
 .project-section {
     grid-area: projects;
-    
-    border: 2px solid black;
+    background-color: var(--light);
+
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: calc(var(--heading-size)*2) 1fr calc(var(--heading-size)*2) 1fr;
+    grid-template-areas: 
+        "project-heading statistics-heading"
+        "projects statistics"
+        "projects goal-heading"
+        "projects goal-progress"
+    ;
+    column-gap: 50px;
+    row-gap: 10px;
+
+    padding: 0 clamp(10px, 5%, 200px);
 }
 
+.project-section h1 {
+    --heading-size: 1.25rem;
+    font-size: var(--heading-size);
+    font-weight: bold;
+    align-self: center;
+}
+
+.project-section h1:first-child {
+    grid-area: project-heading;
+}
+
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+.project-section h1:nth-child(3) {
+    grid-area: statistics-heading;
+}
+
+.project-section h1:nth-child(5) {
+    grid-area: goal-heading;
+}
+
+.project {
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    padding: 20px 25px;
+    border-radius: 10px;
+
+    border-left: 10px solid var(--grey  );
+}
+
+.project h2 {
+    --heading-size: 1.1rem;
+    font-size: var(--heading-size);
+    font-weight: bold;
+}
+
+.project p {
+    color: var(--lighter-dark);
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.project .actions {
+    align-self: end;
+    
+    display: flex;
+    gap: 20px;
+}
+
+.project .actions > button {
+    padding: 7px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--main-dark);
+    color: white;
+    font-weight: bold;
+
+}
+
+.statistics {
+    grid-area: statistics;
+}
+
+.progress {
+    grid-area: goal-progress;
+}
+
+.side-info {
+    background-color: white;
+    align-self: start;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.statistics-section {
+    --item-heading-size: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statistics-section > p:first-child {
+    margin-top: 10px;
+    font-size: var(--item-heading-size);
+    letter-spacing: 0.05rem;
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.statistics-section > p:last-child {
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    flex: 1;
+}
+
+.statistics > div:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--grey);
+}
+
+.progress-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-section h2 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.progress > .progress-section:not(:last-child) {
+    border-bottom: 1px solid var(--grey);
+    padding-bottom: 20px;
+}
